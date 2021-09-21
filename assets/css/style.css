@@ -1,0 +1,42 @@
+h1{
+  font-size: 4em;
+  text-align: center;
+}
+
+.leaderLink {
+  border: 2px solid black;
+  padding: 5px;
+  margin: 3px;
+}
+
+.timerBox {
+  font-size: 1.5em;
+  border: 1px solid green;
+  width: fit-content;
+}
+
+#timer {
+  margin: 10px;
+  font-size: 1.5em;
+  text-align: center;
+  
+}
+
+#contentBox {
+  width: 80%;
+  height: 80%;
+  border: 2px solid purple;
+  margin: 0 auto;
+
+}
+
+#question {
+  font-size: 2em;
+}
+
+#answersBox {
+  border: 2px solid red;
+}
+
+#answersBox p {
+font-size: 2em;}
