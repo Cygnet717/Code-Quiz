@@ -1,6 +1,53 @@
-console.log('Loaded')
+function log(say){
+  console.log(say)
+}
+
+let startBtn = document.querySelector("#start");
+let timeLeft = 4;
+let questionNumber = 0;
+let timerEl = document.querySelector('#timer');
+let questionEl = document.querySelector('#question');
+let answersEl = document.querySelector('#answersBox');
+let contentEl = document.querySelector('#contentBox');
 
 
+function setTime(){
+  var timerInterval = setInterval( function () {
+    timeLeft--;
+    timerEl.innerHTML = timeLeft;
+
+    if(timeLeft === 0){
+      clearInterval(timerInterval);
+      //clear contentBox and populate with result?
+    }
+  }, 1000)
+}
+
+function askQuestion(){
+
+  questionEl.innerHTML = questAndAns[questionNumber].question;
+  let numbAns = questAndAns[questionNumber].answer;
+  for(let i=0; i<numbAns.length; i++){
+    let newEl = document.createElement("p");
+    newEl.innerHTML = numbAns[i];
+    answersEl.appendChild(newEl);
+  }
+//they answer
+//tally if right
+//increment question number
+//if last question end and show end view
+//if not run pose question again 
+}
+
+
+
+function beginQuiz(){
+  setTime();
+  askQuestion();
+  //when timer ends
+}
+
+startBtn.addEventListener('click', beginQuiz)
 
 /*GIVEN I am taking a code quiz
 WHEN I click the start button
@@ -17,45 +64,5 @@ separate page for high scores
 
 */
 
-const questAndAns = [
-  {
-    question: 'Who is the first to die in the fight against Vegeta and Napa?',
-    answer: ['Tien', 'Yamcha', 'Krillin', 'Piccolo']
-  },
-  {
-    question: 'Who lives at Kame house?',
-    answer: ['Master Roshi', 'Gohan', 'Kami', 'Bulma']
-  },
-]
-
-/*
-questions
-
-Who cut off Vegetas tail?
-Krillen, Yagerobi, Gohan, Goku
-
-Which dragon ball was called 'Grandpa'?
-1 star, 7 star, 5 star, 4 star
-
-Is Vegeta the best character in all of Dragon Ball?
-Yes, 100%, Deffinitly, Of Course
-
-Who was the first saijn to go to ssj2?
-Goku, Vegeta, Gohan, Napa
-
-Which Symbol doesnt ever appear on Gokus gi?
 
 
-What is Goku's wifes name?
-Cha Cha, Cho cha, Chi Chi, Chi Cha
-
-
-Who is the best Character in DBZ?
-The Prince of all Saijns, Vegeta, Napas buddy, Bulmas man
-
--Magic question
-Which is not a Magic The Gathering Keyworded ability?
-offering, epic, dash, horsemanship
-
-
-*/
