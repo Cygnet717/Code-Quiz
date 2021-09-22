@@ -1,4 +1,5 @@
 let startBtn = document.querySelector("#start");
+let submitBtn = document.querySelector('#submit');
 let timeLeft = 20;
 let questionNumber = 0;
 let score = 0;
@@ -8,11 +9,10 @@ let answersEl = document.querySelector('#answersBox');
 let oneAnsEl = document.querySelector('#answersBox').children;
 let contentEl = document.querySelector('#contentBox');
 let endEl =  document.querySelector('#endQuiz');
+let nameEl = document.querySelector('#name');
 let scoresArray = [];
 
-//{name: 'kathy', userScore: 1000000}
 
-//
 if(localStorage.getItem('scores') == null){
   localStorage.setItem('scores', JSON.stringify(scoresArray))
 }
@@ -46,22 +46,33 @@ function checkAnswer(event){
 
 function collectScoreInfo(){
   let currentScoreData = JSON.parse(localStorage.getItem('scores'));
-    currentScoreData.push({name: 'standin', userScore: score})
-    localStorage.setItem('scores', JSON.stringify(currentScoreData))
+  let name = nameEl.value;
+
+  currentScoreData.push({userName: name, userScore: score})
+  localStorage.setItem('scores', JSON.stringify(currentScoreData))
+  resetQuiz();
+}
+
+function resetQuiz() {
+  timeLeft = 20;
+  timerEl.innerHTML = timeLeft;
+  questionNumber = 0;
+  score = 0;
+  nameEl.textContent = '';
+  questionEl.innerHTML = '20 sec to complete, lose time for wrong answers';
+  for(let i=0; i< 4; i++){
+    oneAnsEl[i].innerHTML= '';
+  };
+  endEl.setAttribute('style', 'display: none');
+
 }
 
 function endQuiz() {
-  collectScoreInfo();
-  endEl.children[0].innerHTML = 'Times UP! Your score is ' + score 
-  
-  endEl.setAttribute('style', 'display: flex')
+  endEl.children[0].innerHTML = 'Times UP! Your score is ' + score ;
+  endEl.setAttribute('style', 'display: flex');
+  //if score under 1500 add img of yamcha
   //if score over 9000 add gif and exclamation!
-//localStorage.getItem('scores')
-//localStorage.setItem('scores', scoresArray)
-//
-//update scoresArray which each completed quiz
 }
-
 
 function setTime(){
   var timerInterval = setInterval( function () {
@@ -76,21 +87,15 @@ function setTime(){
   }, 1000)
 }
 
-function chosenAnswer(e){
-  console.log(e)
-}
-
 function askQuestion(){
-  questionEl.innerHTML = questAndAns[questionNumber].question;
+  let currentQuestion = questAndAns[questionNumber];
+  questionEl.innerHTML = currentQuestion.question;
 
-  let numbAns = questAndAns[questionNumber].answerChoices;
+  let numbAns = currentQuestion.answerChoices;
   for(let i=0; i<numbAns.length; i++){
-    answersEl.children[i].innerHTML= numbAns[i];
-  
+    oneAnsEl[i].innerHTML= numbAns[i];
   }
 }
-
-
 
 function beginQuiz(){
   setTime();
@@ -99,3 +104,4 @@ function beginQuiz(){
 }
 
 startBtn.addEventListener('click', beginQuiz);
+submitBtn.addEventListener('click', collectScoreInfo);
