@@ -25,18 +25,15 @@ function checkAnswer(event){
 
   let ans = event.target.textContent;
   if(questAndAns[questionNumber].correctAnswer === 'trick'){
-    console.log('all are right');
     score+=1000;
     questionNumber++;
   } else if(questAndAns[questionNumber].correctAnswer === 'bad trick'){ //different last question
-    console.log('all are wrong :P');
     timeLeft = 0
     endQuiz();
   } else if(ans === questAndAns[questionNumber].correctAnswer){
     score+=1000;
     questionNumber++;
   } else {
-    console.log('wrong lost time')
     timeLeft-=5;
     questionNumber++;
   }
@@ -100,7 +97,6 @@ function askQuestion(){
 function beginQuiz(){
   setTime();
   askQuestion();
-  //when timer ends
 }
 
 startBtn.addEventListener('click', beginQuiz);
