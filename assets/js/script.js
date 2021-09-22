@@ -24,7 +24,7 @@ function checkAnswer(ans){
     console.log('all are wrong :P');
     timeLeft = 0
     endQuiz();
-  } else if(ans === correctAns[questionNumber]){
+  } else if(ans === questAndAns[questionNumber].correctAnswer){
     score+=1000;
     questionNumber++;
   } else {
@@ -65,7 +65,7 @@ function chosenAnswer(e){
 function askQuestion(){
 
   questionEl.innerHTML = questAndAns[questionNumber].question;
-  let numbAns = questAndAns[questionNumber].answer;
+  let numbAns = questAndAns[questionNumber].answerChoices;
   for(let i=0; i<numbAns.length; i++){
     answersEl.children[i].innerHTML= numbAns[i];
   
@@ -81,24 +81,3 @@ function beginQuiz(){
 }
 
 startBtn.addEventListener('click', beginQuiz);
-
-
-
-
-/*GIVEN I am taking a code quiz
-WHEN I click the start button
-THEN a timer starts and I am presented with a question
-WHEN I answer a question
-THEN I am presented with another question
-WHEN I answer a question incorrectly
-THEN time is subtracted from the clock
-WHEN all questions are answered or the timer reaches 0
-THEN the game is over
-WHEN the game is over
-THEN I can save my initials and my score 
-separate page for high scores
-
-*/
-
-
-
