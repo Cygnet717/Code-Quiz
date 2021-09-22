@@ -18,14 +18,14 @@ for(let i=0; i < oneAnsEl.length; i++){
 function checkAnswer(ans){
   if(questionNumber === 4 || questionNumber === 8){
     console.log('all are right');
-    score++;
+    score+=1000;
     questionNumber++;
   } else if(questionNumber === 9){
     console.log('all are wrong :P');
     timeLeft = 0
     endQuiz();
   } else if(ans === correctAns[questionNumber]){
-    score++;
+    score+=1000;
     questionNumber++;
   } else {
     console.log('wrong lost time')
@@ -37,9 +37,11 @@ function checkAnswer(ans){
 }
 
 function endQuiz() {
-  endEl.innerHTML = 'Times UP! You got ' + score + ' right!'
-  endEl.setAttribute('style', 'display: flex')
+  endEl.children[0].innerHTML = 'Times UP! Your score is ' + score 
   
+  endEl.setAttribute('style', 'display: flex')
+  //if score over 9000 add gif and exclamation!
+
 }
 
 

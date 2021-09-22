@@ -1,5 +1,10 @@
 
-const questAndAns = [
+const questAndAns = [ 
+  //add who is the biggest disappointment of all db characters
+  //what is gokus biggest fear
+  //how many times has yamcha died 2
+  //how many dots are on Krillins head
+
   {
     question: 'Who is the first to die in the fight against Vegeta and Napa?',
     answer: ['Tien', 'Yamcha', 'Krillin', 'Piccolo']
