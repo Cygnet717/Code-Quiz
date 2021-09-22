@@ -1,10 +1,5 @@
 
 const questAndAns = [ 
-  //add who is the biggest disappointment of all db characters
-  //what is gokus biggest fear
-  //how many times has yamcha died 2
-  //how many dots are on Krillins head
-
   {
     question: 'Who is the first to die in the fight against Vegeta and Napa?',
     answerChoices: ['Tien', 'Yamcha', 'Krillin', 'Piccolo'],
@@ -26,17 +21,32 @@ const questAndAns = [
     correctAnswer: '4 star'
   },
   {
-    question: 'Is Vegeta the best character in all of Dragon Ball?',
-    answerChoices: ['Yes', '100%', 'Deffinitly', 'Of Course'],
-    correctAnswer: 'all'//trick question
+    question: 'What is the name of the turtle that lives at Kame House?',
+    answerChoices: ['Turles', 'Tur Tur', 'Turtle', 'Gregory'],
+    correctAnswer: 'Turtle'
   },
   {
-    question: 'Who was the first saiyan to go to ssj2?',
+    question: 'What is Bulma\'s mothers name?',
+    answerChoices: ['Scarf', 'Bra', 'Panty', 'Bikini'],
+    correctAnswer: 'Bikini'
+  },
+  {
+    question: 'Is Vegeta the best character in all of Dragon Ball?',
+    answerChoices: ['Yes', '100%', 'Definitely', 'Of Course'],
+    correctAnswer: 'trick'//trick question
+  },
+  {
+    question: 'What is Goku afraid of?',
+    answerChoices: ['Needles', 'Turtles', 'Losing', 'Buu'],
+    correctAnswer: 'Needles'
+  },
+  {
+    question: 'Who was the first to achieve super saiyan 2?',
     answerChoices: ['Goku', 'Vegeta', 'Gohan', 'Napa'],
     correctAnswer: 'Gohan'
   },
   {
-    question: 'Which Symbol doesnt ever appear on Gokus gi?',
+    question: 'Which Symbol doesn\'t ever appear on Gokus gi?',
     answerChoices: ['亀 Turtle Hermit', '神 Kami', '悟 Son Goku', '界王 King Kai'],
     correctAnswer: '神 Kami'
   },
@@ -46,13 +56,23 @@ const questAndAns = [
     correctAnswer: 'Chi Chi'
   },
   {
-    question: 'Who is the best Character in DBZ?',
-    answerChoices: ['The Prince of all Saiyans', 'Vegeta', 'Napas buddy', 'Bulmas man'],
-    correctAnswer: 'all'//trick question
+    question: "How many times does Yamcha die (in the main DBZ timeline)?",
+    answerChoices: ['5', '1', '4', '2'],
+    correctAnswer: '2'
   },
   {
-    question: 'Which is not a Magic The Gathering keyworded ability?',
+    question: 'Who is the best character in DBZ?',
+    answerChoices: ['The Prince of all Saiyans', 'Vegeta', 'Vegeta IV', 'Bulmas man'],
+    correctAnswer: 'trick'//trick question
+  },
+  {
+    question: "How many dots are on Krillins head?",
+    answerChoices: ['6', '9', '8', '4'],
+    correctAnswer: '6'
+  },
+  {
+    question: 'And now for something completely different:/nWhich is not a Magic: The Gathering keyworded ability?',
     answerChoices: ['offering', 'epic', 'dash', 'horsemanship'],
-    correctAnswer: 'all' //trick question
+    correctAnswer: 'bad trick' //trick question
   },
 ]

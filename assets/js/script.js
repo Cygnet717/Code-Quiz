@@ -10,17 +10,17 @@ let contentEl = document.querySelector('#contentBox');
 let endEl =  document.querySelector('#endQuiz')
 
 for(let i=0; i < oneAnsEl.length; i++){
-  oneAnsEl[i].addEventListener('click', function (eventTarget){
-    checkAnswer(eventTarget.path[0].innerHTML)
-  })
+  oneAnsEl[i].addEventListener('click', checkAnswer)
 }
 
-function checkAnswer(ans){
-  if(questionNumber === 4 || questionNumber === 8){
+function checkAnswer(event){
+
+  let ans = event.target.textContent;
+  if(questAndAns[questionNumber].correctAnswer === 'trick'){
     console.log('all are right');
     score+=1000;
     questionNumber++;
-  } else if(questionNumber === 9){
+  } else if(questAndAns[questionNumber].correctAnswer === 'bad trick'){ //different last question
     console.log('all are wrong :P');
     timeLeft = 0
     endQuiz();
