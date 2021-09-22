@@ -7,6 +7,7 @@ let questionEl = document.querySelector('#question');
 let answersEl = document.querySelector('#answersBox');
 let oneAnsEl = answersEl.children;
 let contentEl = document.querySelector('#contentBox');
+let endEl =  document.querySelector('#endQuiz')
 
 for(let i=0; i < oneAnsEl.length; i++){
   oneAnsEl[i].addEventListener('click', function (eventTarget){
@@ -15,23 +16,30 @@ for(let i=0; i < oneAnsEl.length; i++){
 }
 
 function checkAnswer(ans){
- console.log(questionNumber)
   if(questionNumber === 4 || questionNumber === 8){
     console.log('all are right');
     score++;
     questionNumber++;
   } else if(questionNumber === 9){
     console.log('all are wrong :P');
+    timeLeft = 0
+    endQuiz();
   } else if(ans === correctAns[questionNumber]){
     score++;
     questionNumber++;
   } else {
     console.log('wrong lost time')
-    timeLeft-5;
+    timeLeft-=5;
     questionNumber++;
   }
 
   askQuestion();
+}
+
+function endQuiz() {
+  endEl.innerHTML = 'Times UP! You got ' + score + ' right!'
+  endEl.setAttribute('style', 'display: flex')
+  
 }
 
 
@@ -42,7 +50,8 @@ function setTime(){
 
     if(timeLeft <= 0){
       clearInterval(timerInterval);
-      //clear contentBox and populate with result?
+      timerEl.innerHTML = 0;
+      endQuiz();
     }
   }, 1000)
 }
@@ -59,11 +68,6 @@ function askQuestion(){
     answersEl.children[i].innerHTML= numbAns[i];
   
   }
-
-
-//increment question number
-//if last question end and show end view
-//if not run pose question again 
 }
 
 

@@ -18,7 +18,7 @@ const questAndAns = [
   },
   {
     question: 'Is Vegeta the best character in all of Dragon Ball?',
-    answer: ['Yes', '100%', 'Deffinitly', 'Of Course']//Q5
+    answer: ['Yes', '100%', 'Deffinitly', 'Of Course']//trick question
   },
   {
     question: 'Who was the first saiyan to go to ssj2?',
@@ -34,11 +34,11 @@ const questAndAns = [
   },
   {
     question: 'Who is the best Character in DBZ?',
-    answer: ['The Prince of all Saiyans', 'Vegeta', 'Napas buddy', 'Bulmas man']//Q9
+    answer: ['The Prince of all Saiyans', 'Vegeta', 'Napas buddy', 'Bulmas man']//trick question
   },
   {
-    question: 'Which is not a Magic The Gathering Keyworded ability?',
-    answer: ['offering', 'epic', 'dash', 'horsemanship'] //Q10
+    question: 'Which is not a Magic The Gathering keyworded ability?',
+    answer: ['offering', 'epic', 'dash', 'horsemanship'] //trick question
   },
 ]
 
@@ -54,14 +54,3 @@ const correctAns = [
   'all',
   'all'
 ]
-
-
-/*
-qu
-
--Magic question
-
-
-
-
-*/

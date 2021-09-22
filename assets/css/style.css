@@ -40,3 +40,11 @@ h1{
 
 #answersBox p {
 font-size: 2em;}
+
+#endQuiz {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 80%;
+}
