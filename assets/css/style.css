@@ -1,45 +1,104 @@
+:root{
+  --gokuOrange: rgb(209, 112, 21);
+  --gokuBlue: rgb(1, 1, 105);
+  --piccoloPurple: rgb(91, 7, 160);
+  --piccoloWhite: white;
+  --backgroundWhite: rgba(255, 255, 255, 0.85);
+}
+
+html {
+  background: url(../images/background.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 h1{
   font-size: 4em;
   text-align: center;
+  width: fit-content;
+  padding: 20px;
+  margin: 30px auto;
+  color: var(--piccoloWhite);
+  background: var(--piccoloPurple);
+  box-shadow: 3px 3px 5px var(--piccoloWhite) inset, -3px -3px 5px var(--piccoloWhite) inset;
 }
 
 .leaderLink {
-  border: 2px solid black;
-  padding: 5px;
-  margin: 3px;
+  padding: 10px;
+  margin: 0 auto;
+  display: block;
+  width: fit-content;
+  font-weight: bolder;
+  text-decoration: none;
+  color: var(--gokuBlue);
+  background: var(--gokuOrange);
+  box-shadow: 3px 3px 3px rgb(71, 71, 71);
+  border-radius: 5px;
+}
+
+#quizBox {
+  margin-top: 15vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
 }
 
 .timerBox {
   font-size: 1.5em;
-  border: 1px solid green;
+  background: var(--backgroundWhite);
+  border: 3px solid var(--gokuOrange);
+  padding: 10px;
+  border-radius: 2px;
   width: fit-content;
+  color: var(--gokuBlue);
 }
 
 #timer {
-  margin: 10px;
+  /* margin: 0 10px; */
   font-size: 1.5em;
   text-align: center;
-  
+  color: var(--gokuBlue);
 }
 
 #contentBox {
   width: 80%;
   height: 80%;
-  border: 2px solid purple;
-  margin: 0 auto;
-
+  border-radius: 2px;
+  border: 2px solid var(--gokuOrange);
+  background: var(--backgroundWhite);
 }
 
 #question {
   font-size: 2em;
+  margin: 15px;
+  color: var(--gokuBlue);
+  border-bottom: 2px solid var(--gokuOrange);
+  text-align: center;
 }
 
 #answersBox {
-  border: 2px solid red;
+  display:flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 #answersBox p {
-font-size: 2em;}
+  font-size: 2em;
+  border-radius: 2px;
+  border: 2px solid var(--gokuOrange);
+  flex-basis: 45%;
+  text-align: center;
+  color: var(--gokuBlue);
+  padding: 20px 0;
+  margin: 10px;
+}
+
+#answersBox p:hover {
+  background: var(--gokuOrange);
+  border: 2px solid var(--gokuBlue)
+}
 
 #endQuiz {
   display: none;
