@@ -1,6 +1,6 @@
 let startBtn = document.querySelector("#start");
 let submitBtn = document.querySelector('#submit');
-let timeLeft = 20;
+let timeLeft = 5;
 let questionNumber = 0;
 let score = 0;
 let timerEl = document.querySelector('#timer');
@@ -14,13 +14,34 @@ let imgEl = document.querySelector('#image');
 let nameEl = document.querySelector('#name');
 let scoresArray = [];
 
+/*if local storage get item scores !== null  then
+socres array = local storage
+makes it a global veriable
+use the array
 
+if it is nullscores array = new 
+*/
 if(localStorage.getItem('scores') == null){
   localStorage.setItem('scores', JSON.stringify(scoresArray))
 }
 
 for(let i=0; i < oneAnsEl.length; i++){
-  oneAnsEl[i].addEventListener('click', checkAnswer)
+  oneAnsEl[i].addEventListener('click', checkAnswer) 
+  /*div with buttons 
+  each button its own id
+  one event listner for box
+
+  buttonsDiv.add event listner (click, function(e){
+    if(e.target.matches("button")){
+      if e.target.getAttribute('attributename') ===yes
+    } })
+    
+    
+    put event listner on answersEl
+    
+    this is event delegation*/
+
+  
 }
 
 function checkAnswer(event){
@@ -43,7 +64,7 @@ function checkAnswer(event){
   askQuestion();
 }
 
-function collectScoreInfo(){
+function collectScoreInfo(){//change these local storages to reference the global veriable
   let currentScoreData = JSON.parse(localStorage.getItem('scores'));
   let name = nameEl.value;
 
@@ -69,18 +90,17 @@ function resetQuiz() {
 }
 
 function endQuiz() {
+  questionEl.setAttribute('style', 'visibility: hidden');
+  answersEl.setAttribute('style', 'visibility: hidden'); 
 
-  //hide questions visi hidden
-  //give endquiz  class overTop
-
-  endEl.children[0].innerHTML = 'Times UP! Your power level is ' + score;
+  endEl.children[0].innerHTML = 'Times UP!<br> Your power level is ' + score;
   if(score >= 9000){
     imgEl.setAttribute('src', imgEl.dataset.over)
   } else if (score >= 2000){
     imgEl.setAttribute('src', imgEl.dataset.goku)
   }
   endEl.setAttribute('style', 'display: flex');
-
+/*save your powerlevel to the scouter!! */
 }
 
 function setTime(){

@@ -62,7 +62,7 @@ h1{
   width: 70%;
   margin: 0 auto;
   border-radius: 2px;
-  border: 2px solid var(--gokuOrange);
+  border: 10px solid var(--gokuOrange);
   background: var(--backgroundWhite);
 }
 
@@ -100,14 +100,42 @@ h1{
 
 #endQuiz {
   display: none;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 80%;
-  height: 80%;
+}
+
+#quizScore {
+  text-align: center;
+  font-size: 2em;
+  color: var(--gokuBlue);
+}
+
+#imgAndInput {
+  display: flex;
+  justify-content: center;
+  align-items: space-evenly; /*for some reason not likeing align items*/
+  height: 100%;
+  width: 100%;
 }
 
 #image {
   height: 150px;
+}
+
+.inputForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  font-size: 1.3em;
+  color: var(--gokuBlue);
+}
+
+input {
+  border: 1px solid var(--gokuBlue);
 }
 
 .overTop {

@@ -1,5 +1,10 @@
 
 const questAndAns = [ 
+  //what is android 17\'s real name? Lapis* Lazuli Limpit Lambert
+  //who did bulma have a crush on while on namek? Zarbon* Dadoria Qui Burter
+  //how many times has Goku used the spirit bomb in battle? 3
+  //who has destroied the moon?  piccolo, master roshi, goku, gohan, vegeta, piccolo and master roshi
+  //what is the name of the afterlife in dbz?  other world, heaven, spirit world, over world
   {
     question: 'Who is the first to die in the fight against Vegeta and Napa?',
     answerChoices: ['Tien', 'Yamcha', 'Krillin', 'Piccolo'],
@@ -31,11 +36,6 @@ const questAndAns = [
     correctAnswer: 'Bikini'
   },
   {
-    question: 'Is Vegeta the best character in all of Dragon Ball?',
-    answerChoices: ['Yes', '100%', 'Definitely', 'Of Course'],
-    correctAnswer: 'trick'//trick question
-  },
-  {
     question: 'What is Goku afraid of?',
     answerChoices: ['Needles', 'Turtles', 'Losing', 'Buu'],
     correctAnswer: 'Needles'
@@ -62,7 +62,7 @@ const questAndAns = [
   },
   {
     question: 'Who is the best character in DBZ?',
-    answerChoices: ['The Prince of all Saiyans', 'Vegeta', 'Vegeta IV', 'Bulmas man'],
+    answerChoices: ['The Prince of all Saiyans', 'Vegeta', 'Vegeta IV', 'Bulma\'s man'],
     correctAnswer: 'trick'//trick question
   },
   {

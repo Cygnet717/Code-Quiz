@@ -34,14 +34,19 @@
           <a id="start" class="btn">Start the Quiz</a>
         </div>
   
-        <div id="endQuiz">
-          <div id="quizScore"></div>
-          <img id="image" alt='image celebrating your powerlevel' src='./assets/images/deadYamcha.jpeg' data-goku="./assets/images/goodJobGoku.jpg" data-over="./assets/images/over9000.jpg"/>
-          <div>
-            <label>Enter Your Initials</label>
-            <input id='name' type="text"/>
-            <a id=submit class="btn">Submit</a>
-          </div>
+        <div id="endQuiz" class="overTop">
+           <div id="quizScore"></div> <!-- if inside another change js-->
+           <div id="imgAndInput">
+
+             <img id="image" alt='image celebrating your powerlevel' src='./assets/images/deadYamcha.jpeg' data-goku="./assets/images/goodJobGoku.jpg" data-over="./assets/images/over9000.jpg"/>
+
+             <div class="inputForm">
+               <label>Enter Your Initials</label>
+               <input id='name' type="text"/>
+               <a id=submit class="btn">Submit</a>
+             </div>
+
+           </div>
         </div>
       </div>
     </main>
