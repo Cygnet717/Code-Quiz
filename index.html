@@ -12,33 +12,34 @@
 
     <header>
       <h1>Dragon Ball Z Quiz</h1>
-      <a class="leaderLink" href="./leaderboard.html">Leader Board</a>
+      <a class="leaderBoard btn" href="./leaderboard.html">Leader Board</a>
     </header>
 
     <main>
-      <div id="quizBox">
-        <div class="timerBox">
-          Time Left
-          <p id="timer">20</p>
-        </div>
-        
-        <div id="contentBox">
-          <p id="question">20 sec to complete and time will be taken away for wrong answers.</p>
-          <div id="answersBox">
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-          </div>
-        </div>
+      <div class="timerBox">
+        Time Left
+        <p id="timer">20</p>
       </div>
-      <button id="start" class="btn">Start</button>
+      
+      <div id="contentBox">
+        <p id="question">20 sec to complete and time will be taken away for wrong answers.</p>
+        <div id="answersBox">
+          <p></p>
+          <p></p>
+          <p></p>
+          <p></p>
+        </div>
 
-      <div id="endQuiz">
-        <div id="quizScore"></div>
-        <label>Enter Your Initials</label>
-        <input id='name' type="text"/>
-        <button id=submit class="btn">Submit</button>
+        <div id="startOverlay" class="overTop">
+          <a id="start" class="btn">Start the Quiz</a>
+        </div>
+  
+        <div id="endQuiz">
+          <div id="quizScore"></div>
+          <label>Enter Your Initials</label>
+          <input id='name' type="text"/>
+          <a id=submit class="btn">Submit</a>
+        </div>
       </div>
     </main>
 

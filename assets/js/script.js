@@ -8,6 +8,7 @@ let questionEl = document.querySelector('#question');
 let answersEl = document.querySelector('#answersBox');
 let oneAnsEl = document.querySelector('#answersBox').children;
 let contentEl = document.querySelector('#contentBox');
+let startOverlayEl = document.querySelector('#startOverlay');
 let endEl =  document.querySelector('#endQuiz');
 let nameEl = document.querySelector('#name');
 let scoresArray = [];
@@ -85,6 +86,10 @@ function setTime(){
 }
 
 function askQuestion(){
+  startOverlayEl.style.visibility = 'hidden';
+  questionEl.style.visibility =  "visible";
+  answersEl.style.visibility =  "visible";
+
   let currentQuestion = questAndAns[questionNumber];
   questionEl.innerHTML = currentQuestion.question;
 

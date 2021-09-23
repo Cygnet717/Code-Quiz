@@ -25,9 +25,9 @@ h1{
   box-shadow: 3px 3px 5px var(--piccoloWhite) inset, -3px -3px 5px var(--piccoloWhite) inset;
 }
 
-.leaderLink {
+.btn {
   padding: 10px;
-  margin: 0 auto;
+  margin: 5vh auto;
   display: block;
   width: fit-content;
   font-weight: bolder;
@@ -36,13 +36,7 @@ h1{
   background: var(--gokuOrange);
   box-shadow: 3px 3px 3px rgb(71, 71, 71);
   border-radius: 5px;
-}
-
-#quizBox {
-  margin-top: 15vh;
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
+  border: none;
 }
 
 .timerBox {
@@ -50,6 +44,7 @@ h1{
   background: var(--backgroundWhite);
   border: 3px solid var(--gokuOrange);
   padding: 10px;
+  margin-left: 30px;
   border-radius: 2px;
   width: fit-content;
   color: var(--gokuBlue);
@@ -63,14 +58,16 @@ h1{
 }
 
 #contentBox {
-  width: 80%;
-  height: 80%;
+  position: relative;
+  width: 70%;
+  margin: 0 auto;
   border-radius: 2px;
   border: 2px solid var(--gokuOrange);
   background: var(--backgroundWhite);
 }
 
 #question {
+  visibility: hidden; /*change to visible*/
   font-size: 2em;
   margin: 15px;
   color: var(--gokuBlue);
@@ -79,7 +76,8 @@ h1{
 }
 
 #answersBox {
-  display:flex;
+  visibility: hidden;/*change to visible*/
+  display:flex;  
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
@@ -106,4 +104,20 @@ h1{
   align-items: center;
   width: 80%;
   height: 80%;
+}
+
+.overTop {
+  background: var(--backgroundWhite);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.visiHidden {
+  visibility: hidden;
 }
