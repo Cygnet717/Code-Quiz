@@ -10,6 +10,7 @@ let oneAnsEl = document.querySelector('#answersBox').children;
 let contentEl = document.querySelector('#contentBox');
 let startOverlayEl = document.querySelector('#startOverlay');
 let endEl =  document.querySelector('#endQuiz');
+let imgEl = document.querySelector('#image');
 let nameEl = document.querySelector('#name');
 let scoresArray = [];
 
@@ -62,14 +63,24 @@ function resetQuiz() {
     oneAnsEl[i].innerHTML= '';
   };
   endEl.setAttribute('style', 'display: none');
-
+  //startOverlayEl.setAttribute('style', 'visibility: visible');
+  // questionEl.setAttribute('style', 'visibility: hidden');
+  // answersEl.setAttribute('style', 'visibility: hidden'); 
 }
 
 function endQuiz() {
-  endEl.children[0].innerHTML = 'Times UP! Your score is ' + score ;
+
+  //hide questions visi hidden
+  //give endquiz  class overTop
+
+  endEl.children[0].innerHTML = 'Times UP! Your power level is ' + score;
+  if(score >= 9000){
+    imgEl.setAttribute('src', imgEl.dataset.over)
+  } else if (score >= 2000){
+    imgEl.setAttribute('src', imgEl.dataset.goku)
+  }
   endEl.setAttribute('style', 'display: flex');
-  //if score under 1500 add img of yamcha
-  //if score over 9000 add gif and exclamation!
+
 }
 
 function setTime(){
@@ -86,9 +97,9 @@ function setTime(){
 }
 
 function askQuestion(){
-  startOverlayEl.style.visibility = 'hidden';
-  questionEl.style.visibility =  "visible";
-  answersEl.style.visibility =  "visible";
+  startOverlayEl.setAttribute('style', 'visibility: hidden');
+  questionEl.setAttribute('style', 'visibility: visible');
+  answersEl.setAttribute('style', 'visibility: visible');
 
   let currentQuestion = questAndAns[questionNumber];
   questionEl.innerHTML = currentQuestion.question;
