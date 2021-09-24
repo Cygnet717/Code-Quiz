@@ -182,3 +182,85 @@ th {
   background-color: var(--gokuOrange);
   color: var(--gokublue);
 }
+
+@media  screen and (max-width: 1070px) {
+  #firstMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #contentBox {
+    width: 80%;
+  }
+
+  .timerBox{
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+
+  #firstMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 6em;
+  }
+
+  .btn {
+    font-size: 3em;
+  }
+
+  .timerBox {
+    margin-left: 0;
+    font-size: 3em;
+    margin-bottom: 25px;
+    width: 20%;
+  }
+
+  #question {
+    font-size: 5em;
+  }
+
+  #answersBox p {
+    font-size: 4em;
+    flex-basis: 90%;
+  }
+
+  #quizScore {
+    font-size: 4em;
+  }
+
+  #imgAndInput {
+    flex-direction: column;
+    width: inherit;
+  }
+
+  #image {
+    height: 400px;
+  }
+
+  label {
+    font-size: 3em;
+  }
+
+  input {
+    height: 60px;
+    width: 70%;
+  }
+  /*score board styles*/
+
+  #board {
+    width: 90%;
+  }
+
+  #scoreBoard {
+    font-size: 4em;
+    width: 90%;
+  }
+}
