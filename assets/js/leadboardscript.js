@@ -15,3 +15,4 @@ for(let i=0; i<scoresArray.length; i++){
 
   tableEl.appendChild(newLine)
 }
+//if its empty display "no scores yet"

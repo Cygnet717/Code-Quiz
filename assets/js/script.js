@@ -22,9 +22,10 @@ if(localStorage.getItem('scores') !== null){
 } 
 
 function checkAnswer(event){
+  if(event.target.matches('p')){
 
-  let userAns = event.target.textContent;
-  let corrAns = questAndAns[questionNumber].correctAnswer
+    let userAns = event.target.textContent;
+    let corrAns = questAndAns[questionNumber].correctAnswer
 
     if(userAns === corrAns || corrAns === 'trick'){// if answer is correct or the trick question give points and progress
       score+=1000;
@@ -35,8 +36,6 @@ function checkAnswer(event){
     }
 
     if(questionNumber === questAndAns.length){//if its the last question, end game
-      console.log(questAndAns.length)
-      console.log(questionNumber)
       let endTime = timeLeft;
       endQuiz(endTime);
       timeLeft = 0;
@@ -45,10 +44,14 @@ function checkAnswer(event){
       answersEl.innerHTML = '';
       askQuestion();
     }
+  }
 }
 
 function collectScoreInfo(){
   let name = nameEl.value;
+  console.log(scoresArray)//.push not a function??
+  console.log(name)
+  console.log(score)
 
   scoresArray.push({userName: name, userScore: score})
   localStorage.setItem('scores', JSON.stringify(scoresArray))

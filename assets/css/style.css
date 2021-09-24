@@ -150,3 +150,35 @@ input {
   align-items: center;
   justify-content: center;
 }
+
+/*score board styles*/
+#scoreBoard {
+  border:5px solid var(--gokuOrange);
+  background-color: var(--backgroundWhite);
+  margin: 0 auto;
+  width: 50%;
+  font-weight: bold;
+  color: var(--gokuBlue);
+}
+
+tr {
+  border-bottom: 3px solid var(--gokuOrange);
+}
+
+tr:nth-child(even){
+  background-color: cadetblue;
+}
+
+tr:hover {
+  background-color: darkgoldenrod;
+}
+
+td, th {
+  padding: 8px;
+  border: 2px solid var(--gokuBlue);
+}
+
+th {
+  background-color: var(--piccoloPurple);
+  color: var(--piccoloWhite);
+}
