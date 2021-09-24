@@ -72,7 +72,7 @@ const questAndAns = [
   },
   {
     question: 'And now for something completely different:<br>Which is not a Magic: The Gathering keyworded ability?',
-    answerChoices: ['offering', 'epic', 'dash', 'horsemanship'],
-    correctAnswer: 'bad trick' //trick question
+    answerChoices: ['Offering', 'Epic', 'Dash', 'Elevate'],
+    correctAnswer: 'Elevate' 
   },
 ]

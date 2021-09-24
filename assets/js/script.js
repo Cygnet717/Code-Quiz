@@ -1,6 +1,6 @@
 let startBtn = document.querySelector("#start");
 let submitBtn = document.querySelector('#submit');
-let timeLeft = 5;
+let timeLeft = 120;
 let questionNumber = 0;
 let score = 0;
 let timerEl = document.querySelector('#timer');
@@ -19,7 +19,7 @@ socres array = local storage
 makes it a global veriable
 use the array
 
-if it is nullscores array = new 
+if it is null scores array = new 
 */
 if(localStorage.getItem('scores') == null){
   localStorage.setItem('scores', JSON.stringify(scoresArray))
@@ -46,22 +46,27 @@ for(let i=0; i < oneAnsEl.length; i++){
 
 function checkAnswer(event){
 
-  let ans = event.target.textContent;
-  if(questAndAns[questionNumber].correctAnswer === 'trick'){
-    score+=1000;
-    questionNumber++;
-  } else if(questAndAns[questionNumber].correctAnswer === 'bad trick'){ //different last question
-    timeLeft = 0
-    endQuiz();
-  } else if(ans === questAndAns[questionNumber].correctAnswer){
-    score+=1000;
-    questionNumber++;
-  } else {
-    timeLeft-=5;
-    questionNumber++;
-  }
+  let userAns = event.target.textContent;
+  let corrAns = questAndAns[questionNumber].correctAnswer
 
-  askQuestion();
+    if(userAns === corrAns || corrAns === 'trick'){// if answer is correct or the trick question give points and progress
+      score+=1000;
+      questionNumber++;
+    } else { //wrong answer
+      timeLeft-=5;
+      questionNumber++;
+    }
+
+    if(questionNumber === questAndAns.length){//if its the last question, end game
+      console.log(questAndAns.length)
+      console.log(questionNumber)
+      let endTime = timeLeft;
+      endQuiz(endTime);
+      timeLeft = 0;
+      
+    } else { //else keep going
+      askQuestion();
+    }
 }
 
 function collectScoreInfo(){//change these local storages to reference the global veriable
@@ -84,23 +89,23 @@ function resetQuiz() {
     oneAnsEl[i].innerHTML= '';
   };
   endEl.setAttribute('style', 'display: none');
-  //startOverlayEl.setAttribute('style', 'visibility: visible');
-  // questionEl.setAttribute('style', 'visibility: hidden');
-  // answersEl.setAttribute('style', 'visibility: hidden'); 
+  startOverlayEl.setAttribute('style', 'visibility: visible');
 }
 
-function endQuiz() {
+function endQuiz(time) {
+  if(time > 0){
+   score += time
+  }
   questionEl.setAttribute('style', 'visibility: hidden');
   answersEl.setAttribute('style', 'visibility: hidden'); 
 
-  endEl.children[0].innerHTML = 'Times UP!<br> Your power level is ' + score;
+  endEl.children[0].innerHTML = 'Times UP!<br> Your power level is ' + score.toLocaleString();
   if(score >= 9000){
     imgEl.setAttribute('src', imgEl.dataset.over)
-  } else if (score >= 2000){
+  } else if (score >= 3000){
     imgEl.setAttribute('src', imgEl.dataset.goku)
   }
   endEl.setAttribute('style', 'display: flex');
-/*save your powerlevel to the scouter!! */
 }
 
 function setTime(){
