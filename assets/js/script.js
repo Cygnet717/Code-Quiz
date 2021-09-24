@@ -18,10 +18,11 @@ let scoresArray = [];
 
 //check local storage for previous scores and give it to the global variable
 if(localStorage.getItem('scores') !== null){
-  scoresArray = localStorage.getItem('scores');
+  scoresArray = JSON.parse(localStorage.getItem('scores'));
 } 
 
 function checkAnswer(event){
+  console.log(questionNumber)
   if(event.target.matches('p')){
 
     let userAns = event.target.textContent;
@@ -49,9 +50,6 @@ function checkAnswer(event){
 
 function collectScoreInfo(){
   let name = nameEl.value;
-  console.log(scoresArray)//.push not a function??
-  console.log(name)
-  console.log(score)
 
   scoresArray.push({userName: name, userScore: score})
   localStorage.setItem('scores', JSON.stringify(scoresArray))
@@ -59,7 +57,7 @@ function collectScoreInfo(){
 }
 
 function resetQuiz() {
-  timeLeft = 20;
+  timeLeft = 120;
   timerEl.innerHTML = timeLeft;
   questionNumber = 0;
   score = 0;
@@ -123,3 +121,11 @@ function beginQuiz(){
 startBtn.addEventListener('click', beginQuiz);
 answersEl.addEventListener('click', checkAnswer)
 submitBtn.addEventListener('click', collectScoreInfo);
+
+
+// [
+//   {
+//     thing: 'this',
+//     other: 'that'
+//   }
+// ]
