@@ -153,7 +153,7 @@ input {
 
 /*score board styles*/
 #scoreBoard {
-  border:5px solid var(--gokuOrange);
+  border:5px solid var(--gokuBlue);
   background-color: var(--backgroundWhite);
   margin: 0 auto;
   width: 50%;
@@ -166,19 +166,19 @@ tr {
 }
 
 tr:nth-child(even){
-  background-color: cadetblue;
+  background-color:rgba(247, 211, 120, 0.85);
 }
 
 tr:hover {
-  background-color: darkgoldenrod;
+  background-color: rgb(255, 197, 49);
 }
 
 td, th {
   padding: 8px;
-  border: 2px solid var(--gokuBlue);
+  border: 2px solid var(--gokuOrange);
 }
 
 th {
-  background-color: var(--piccoloPurple);
-  color: var(--piccoloWhite);
+  background-color: var(--gokuOrange);
+  color: var(--gokublue);
 }
