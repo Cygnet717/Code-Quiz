@@ -1,48 +1,25 @@
+//selectors
 let startBtn = document.querySelector("#start");
 let submitBtn = document.querySelector('#submit');
-let timeLeft = 120;
-let questionNumber = 0;
-let score = 0;
 let timerEl = document.querySelector('#timer');
 let questionEl = document.querySelector('#question');
-let answersEl = document.querySelector('#answersBox');
-let oneAnsEl = document.querySelector('#answersBox').children;
+let answersEl = document.querySelector('#answersBox');///
 let contentEl = document.querySelector('#contentBox');
 let startOverlayEl = document.querySelector('#startOverlay');
 let endEl =  document.querySelector('#endQuiz');
 let imgEl = document.querySelector('#image');
 let nameEl = document.querySelector('#name');
+
+//global variables
+let timeLeft = 120;
+let questionNumber = 0;
+let score = 0;
 let scoresArray = [];
 
-/*if local storage get item scores !== null  then
-socres array = local storage
-makes it a global veriable
-use the array
-
-if it is null scores array = new 
-*/
-if(localStorage.getItem('scores') == null){
-  localStorage.setItem('scores', JSON.stringify(scoresArray))
-}
-
-for(let i=0; i < oneAnsEl.length; i++){
-  oneAnsEl[i].addEventListener('click', checkAnswer) 
-  /*div with buttons 
-  each button its own id
-  one event listner for box
-
-  buttonsDiv.add event listner (click, function(e){
-    if(e.target.matches("button")){
-      if e.target.getAttribute('attributename') ===yes
-    } })
-    
-    
-    put event listner on answersEl
-    
-    this is event delegation*/
-
-  
-}
+//check local storage for previous scores and give it to the global variable
+if(localStorage.getItem('scores') !== null){
+  scoresArray = localStorage.getItem('scores');
+} 
 
 function checkAnswer(event){
 
@@ -65,16 +42,16 @@ function checkAnswer(event){
       timeLeft = 0;
       
     } else { //else keep going
+      answersEl.innerHTML = '';
       askQuestion();
     }
 }
 
-function collectScoreInfo(){//change these local storages to reference the global veriable
-  let currentScoreData = JSON.parse(localStorage.getItem('scores'));
+function collectScoreInfo(){
   let name = nameEl.value;
 
-  currentScoreData.push({userName: name, userScore: score})
-  localStorage.setItem('scores', JSON.stringify(currentScoreData))
+  scoresArray.push({userName: name, userScore: score})
+  localStorage.setItem('scores', JSON.stringify(scoresArray))
   resetQuiz();
 }
 
@@ -85,9 +62,7 @@ function resetQuiz() {
   score = 0;
   nameEl.textContent = '';
   questionEl.innerHTML = '20 sec to complete, lose time for wrong answers';
-  for(let i=0; i< 4; i++){
-    oneAnsEl[i].innerHTML= '';
-  };
+  answersEl.innerHTML = '';
   endEl.setAttribute('style', 'display: none');
   startOverlayEl.setAttribute('style', 'visibility: visible');
 }
@@ -131,7 +106,9 @@ function askQuestion(){
 
   let numbAns = currentQuestion.answerChoices;
   for(let i=0; i<numbAns.length; i++){
-    oneAnsEl[i].innerHTML= numbAns[i];
+    let newEl = document.createElement('p');
+    newEl.textContent= numbAns[i];
+    answersEl.append(newEl);
   }
 }
 
@@ -141,4 +118,5 @@ function beginQuiz(){
 }
 
 startBtn.addEventListener('click', beginQuiz);
+answersEl.addEventListener('click', checkAnswer)
 submitBtn.addEventListener('click', collectScoreInfo);
