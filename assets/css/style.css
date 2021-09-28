@@ -14,6 +14,11 @@ html {
   background-size: cover;
 }
 
+@font-face {
+  font-family: Saiyan-sans;
+  src: url(../Saiyan-Sans.ttf);
+}
+
 h1{
   font-size: 4em;
   text-align: center;
@@ -21,6 +26,7 @@ h1{
   padding: 20px;
   margin: 30px auto;
   color: var(--piccoloWhite);
+  font-family: Saiyan-sans;
   background: var(--piccoloPurple);
   box-shadow: 3px 3px 5px var(--piccoloWhite) inset, -3px -3px 5px var(--piccoloWhite) inset;
 }
