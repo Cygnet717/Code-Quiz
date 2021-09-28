@@ -60,6 +60,7 @@ h1{
 #contentBox {
   position: relative;
   width: 70%;
+  min-height: 200px;
   margin: 0 auto;
   border-radius: 2px;
   border: 10px solid var(--gokuOrange);
@@ -103,6 +104,12 @@ h1{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+#startOverlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 #quizScore {

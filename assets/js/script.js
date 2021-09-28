@@ -11,7 +11,7 @@ let imgEl = document.querySelector('#image');
 let nameEl = document.querySelector('#name');
 
 //global variables
-let timeLeft = 120;
+let timeLeft = 90;
 let questionNumber = 0;
 let score = 0;
 let scoresArray = [];
@@ -57,14 +57,20 @@ function collectScoreInfo(){
 }
 
 function resetQuiz() {
-  timeLeft = 120;
+  //reset initial variables
+  timeLeft = 90;
   timerEl.innerHTML = timeLeft;
   questionNumber = 0;
   score = 0;
   nameEl.textContent = '';
   questionEl.innerHTML = '20 sec to complete, lose time for wrong answers';
   answersEl.innerHTML = '';
+  //hide the quiz end overlay
   endEl.setAttribute('style', 'display: none');
+  //add to and display start quiz overlay
+  var newContent = document.createElement('p');
+  newContent.textContent = 'Your score has been submitted';
+  startOverlayEl.appendChild(newContent);
   startOverlayEl.setAttribute('style', 'visibility: visible');
 }
 
