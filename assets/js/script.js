@@ -2,6 +2,7 @@
 let startBtn = document.querySelector("#start");
 let submitBtn = document.querySelector('#submit');
 let timerEl = document.querySelector('#timer');
+let alertEl = document.querySelector('.alertBox')
 let questionEl = document.querySelector('#question');
 let answersEl = document.querySelector('#answersBox');///
 let contentEl = document.querySelector('#contentBox');
@@ -9,6 +10,7 @@ let startOverlayEl = document.querySelector('#startOverlay');
 let endEl =  document.querySelector('#endQuiz');
 let imgEl = document.querySelector('#image');
 let nameEl = document.querySelector('#name');
+let alertTimeleft = 1;
 
 //global variables
 let timeLeft = 90;
@@ -21,8 +23,21 @@ if(localStorage.getItem('scores') !== null){
   scoresArray = JSON.parse(localStorage.getItem('scores'));
 } 
 
+function showTimeLossAlert() {
+alertEl.setAttribute('style', 'animation: showAlert 1.3s;')
+
+var alertTimerInterval = setInterval( function () {
+  alertEl.setAttribute('style', 'animation: none;');
+  alertTimeleft--;
+  if(alertTimeleft <= 0){
+    clearInterval(alertTimerInterval);
+  }
+}, 1000)
+
+
+}
+
 function checkAnswer(event){
-  console.log(questionNumber)
   if(event.target.matches('p')){
 
     let userAns = event.target.textContent;
@@ -32,6 +47,7 @@ function checkAnswer(event){
       score+=1000;
       questionNumber++;
     } else { //wrong answer
+      showTimeLossAlert();
       timeLeft-=5;
       questionNumber++;
     }
@@ -107,6 +123,7 @@ function askQuestion(){
   startOverlayEl.setAttribute('style', 'visibility: hidden');
   questionEl.setAttribute('style', 'visibility: visible');
   answersEl.setAttribute('style', 'visibility: visible');
+
 
   let currentQuestion = questAndAns[questionNumber];
   questionEl.innerHTML = currentQuestion.question;

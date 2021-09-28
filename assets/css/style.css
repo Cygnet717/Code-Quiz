@@ -39,12 +39,38 @@ h1{
   border: none;
 }
 
+.upperBox {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.alertBox {
+  opacity: 0;
+  font-size: 1.5em;
+  background: rgba(255, 0, 0, 0.85);
+  border: 3px solid red;
+  padding: 10px;
+  border-radius: 2px;
+  width: fit-content;
+  height: fit-content;
+  color: var(--gokuBlue);
+  /*given showAlert animation via js*/
+}
+
+@keyframes showAlert {
+  0% {opacity: 0;}
+  50% {opacity: 1;}
+  100%{opacity: 0;}
+}
+
 .timerBox {
   font-size: 1.5em;
   background: var(--backgroundWhite);
   border: 3px solid var(--gokuOrange);
   padding: 10px;
-  margin-left: 30px;
   border-radius: 2px;
   width: fit-content;
   color: var(--gokuBlue);
@@ -112,9 +138,15 @@ h1{
   justify-content: space-evenly;
 }
 
+#startOverlay p {
+  color: var(--gokuBlue);
+  font-size: 2em;
+
+}
+
 #quizScore {
   text-align: center;
-  font-size: 2em;
+  font-size: 1.5em;
   color: var(--gokuBlue);
 }
 
@@ -197,7 +229,7 @@ th {
     align-items: center;
   }
 
-  #contentBox {
+  #contentBox, .upperBox {
     width: 80%;
   }
 
