@@ -1,10 +1,5 @@
 
 const questAndAns = [ 
-  //what is android 17\'s real name? Lapis* Lazuli Limpit Lambert
-  //who did bulma have a crush on while on namek? Zarbon* Dadoria Qui Burter
-  //how many times has Goku used the spirit bomb in battle? 3
-  //who has destroied the moon?  piccolo, master roshi, goku, gohan, vegeta, piccolo and master roshi
-  //what is the name of the afterlife in dbz?  other world, heaven, spirit world, over world
   {
     question: 'Who is the first to die in the fight against Vegeta and Napa?',
     answerChoices: ['Tien', 'Yamcha', 'Krillin', 'Piccolo'],
@@ -16,7 +11,7 @@ const questAndAns = [
     correctAnswer: 'Master Roshi'
   },
   {
-    question: 'Who cut off Vegetas tail?',
+    question: 'Who cut off Vegeta\'s tail?',
     answerChoices: ['Krillen', 'Yagerobi', 'Gohan', 'Goku'],
     correctAnswer: 'Yagerobi'
   },
@@ -51,7 +46,7 @@ const questAndAns = [
     correctAnswer: '神 Kami'
   },
   {
-    question: "What is Goku's wifes name?",
+    question: "What is Goku's wife\'s name?",
     answerChoices: ['Cha Cha', 'Cho cha', 'Chi Chi', 'Chi Cha'],
     correctAnswer: 'Chi Chi'
   },
@@ -66,9 +61,34 @@ const questAndAns = [
     correctAnswer: 'trick'//trick question
   },
   {
-    question: "How many dots are on Krillins head?",
+    question: "How many dots are on Krillin\'s head?",
     answerChoices: ['6', '9', '8', '4'],
     correctAnswer: '6'
+  },
+  {
+    question: "What is Android 17\'s real name?",
+    answerChoices: ['Lambert', 'Lazuli', 'Limpit', 'Lapis'],
+    correctAnswer: 'Lapis'
+  },
+  {
+    question: "Who did Bulma have a crush on while on Namek?",
+    answerChoices: ['Burter', 'Zarbon', 'Dadoria', 'Qui'],
+    correctAnswer: 'Zarbon'
+  },
+  {
+    question: "How many times has Goku used the spirit bomb in battle?",
+    answerChoices: ['1', '2', '3', '4'],
+    correctAnswer: '3'
+  },
+  {
+    question: "What is the name of the afterlife in DBZ?",
+    answerChoices: ['Other World', 'Over World', 'Spirit World', 'Heaven'],
+    correctAnswer: 'Other World'
+  },
+  {
+    question: "Who has destroyed the moon?",
+    answerChoices: ['Master Roshi', 'Buu', 'Goku', 'Freeza'],
+    correctAnswer: 'Master Roshi'
   },
   {
     question: 'And now for something completely different:<br>Which is not a Magic: The Gathering keyworded ability?',
