@@ -76,6 +76,11 @@ const questAndAns = [
     correctAnswer: 'Zarbon'
   },
   {
+    question: "How long did it take young Roshi to catch Korin and obtain the Sacred Water?",
+    answerChoices: ['3 years', '5 years', '1 year', 'He never did'],
+    correctAnswer: '3 years'
+  },
+  {
     question: "How many times has Goku used the spirit bomb in battle?",
     answerChoices: ['1', '2', '3', '4'],
     correctAnswer: '3'
@@ -89,6 +94,16 @@ const questAndAns = [
     question: "Who has destroyed the moon?",
     answerChoices: ['Master Roshi', 'Buu', 'Goku', 'Freeza'],
     correctAnswer: 'Master Roshi'
+  },
+  {
+    question: "What is the name of the fusion of Vegeta and Goku after performing the Fusion Dance?",
+    answerChoices: ['Goketa', 'Vegeto', 'Vegeku', 'Gogeta'],
+    correctAnswer: 'Gogeta'
+  },
+  {
+    question: "What sustenance do Namekians need?",
+    answerChoices: ['Other Namekians', 'Just water', 'Frogs', 'Nothing'],
+    correctAnswer: 'Just water'
   },
   {
     question: 'And now for something completely different:<br>Which is not a Magic: The Gathering keyworded ability?',
