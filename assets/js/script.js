@@ -33,8 +33,6 @@ var alertTimerInterval = setInterval( function () {
     clearInterval(alertTimerInterval);
   }
 }, 1000)
-
-
 }
 
 function checkAnswer(event){
@@ -67,6 +65,8 @@ function checkAnswer(event){
 function collectScoreInfo(){
   let name = nameEl.value;
 
+  contentEl.classList.remove('taller')
+
   scoresArray.push({userName: name, userScore: score})
   localStorage.setItem('scores', JSON.stringify(scoresArray))
   resetQuiz();
@@ -92,17 +92,21 @@ function resetQuiz() {
 
 function endQuiz(time) {
   if(time > 0){
-   score += time
-  }
+   score += time;
+  };
   questionEl.setAttribute('style', 'visibility: hidden');
   answersEl.setAttribute('style', 'visibility: hidden'); 
 
   endEl.children[0].innerHTML = 'Times UP!<br> Your power level is ' + score.toLocaleString();
+
+
   if(score >= 9000){
-    imgEl.setAttribute('src', imgEl.dataset.over)
+    imgEl.setAttribute('src', imgEl.dataset.over);
   } else if (score >= 3000){
-    imgEl.setAttribute('src', imgEl.dataset.goku)
+    imgEl.setAttribute('src', imgEl.dataset.goku);
   }
+
+  contentEl.classList.add('taller')
   endEl.setAttribute('style', 'display: flex');
 }
 

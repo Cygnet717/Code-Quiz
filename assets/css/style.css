@@ -127,7 +127,7 @@ h1{
   margin: 10px;
 }
 
-#answersBox p:hover {
+#answersBox p:hover, #answersBox p:active {
   background: var(--gokuOrange);
   border: 2px solid var(--gokuBlue)
 }
@@ -273,6 +273,10 @@ th {
     font-size: 5em;
   }
 
+  .taller {
+    min-height: 1000px;
+  }
+
   #answersBox p {
     font-size: 4em;
     flex-basis: 90%;
@@ -299,6 +303,11 @@ th {
     height: 60px;
     width: 70%;
     font-size: 2.5em;
+  }
+
+  #startOverlay p {
+    font-size: 3em;
+    padding-bottom: 2em;
   }
   /*score board styles*/
 
