@@ -80,6 +80,7 @@ h1{
   border-radius: 2px;
   width: fit-content;
   color: var(--gokuBlue);
+  text-align: center;
 }
 
 #timer {
@@ -261,7 +262,7 @@ th {
     font-size: 3em;
   }
 
-  .timerBox {
+  .timerBox, .alertBox {
     margin-left: 0;
     font-size: 3em;
     margin-bottom: 25px;
@@ -297,6 +298,7 @@ th {
   input {
     height: 60px;
     width: 70%;
+    font-size: 2.5em;
   }
   /*score board styles*/
 
@@ -305,7 +307,7 @@ th {
   }
 
   #scoreBoard {
-    font-size: 4em;
+    font-size: 3em;
     width: 90%;
   }
 }
