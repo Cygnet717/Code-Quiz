@@ -84,9 +84,8 @@ function resetQuiz() {
   //hide the quiz end overlay
   endEl.setAttribute('style', 'display: none');
   //add to and display start quiz overlay
-  var newContent = document.createElement('p');
-  newContent.textContent = 'Your score has been submitted';
-  startOverlayEl.appendChild(newContent);
+  
+  document.querySelector('#submittedNote').textContent = 'Your score has been submitted';
   startOverlayEl.setAttribute('style', 'visibility: visible');
 }
 
